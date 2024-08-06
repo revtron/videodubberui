@@ -2,32 +2,121 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+/* styles/global.css */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.container {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.breadcrumbs {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: gray;
+}
+
+.breadcrumbs span {
+  color: #555;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 60px;
+}
+
+.title-section h1 {
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.title-section p {
+  font-size: 30px;
+  color: #555;
+}
+.button-and-texts{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.visit-button {
+  position: relative;
+  display: inline-block;
+}
+
+.visit-button button {
+  background-color: white;
+  color: white;
+  border: none;
+  padding: 20px 30px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  color: black;
+  border: 1px solid gray;
+
+}
+
+.visit-button .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.visit-button:hover .dropdown-content {
+  display: block;
+}
+
+.visit-button .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.visit-button .dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.upvote-button {
+  background-color: #fe6156;
+  color: white;
+  border: none;
+  padding: 20px 30px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .visit-button {
+    margin-top: 10px;
   }
 }
